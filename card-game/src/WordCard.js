@@ -1,21 +1,42 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CharacterCard from './CharacterCard';
+import _ from 'lodash';
 
-export default class WordCard extends Component {
+export default function WordCard(props) {
 
-    activationHandler = c => {
-        console.log(`${c} has been activated.`) 
+    const activationHandler = (c) => {
+        console.log(`${c} has been activated.`)
+        // let guess = state.guess + c
+        // setState({...state, guess})
+        // if(guess.length == state.word.length){
+        //     if(guess == state.word){
+        //         console.log('yeah!')
+        //         setState({...state, guess: '', completed: true})
+        //     }else{
+        //         console.log('reset')
+        //         setState({...state, guess: '', attempt: state.attempt + 1})
+        //     }
+        // }
     }
 
-    render() {
-        return (
-            <div>
-                { 
-                    Array.from(this.props.value).map((c, i) => 
-                    <CharacterCard value={c} key={i} activationHandler={this.activationHandler}/>)
-                
-                }
-            </div>
-        );
+    const prepareStateFromWord = (given_word) => {
+        let word = given_word.toUpperCase()
+        let chars = _.shuffle(Array.from(word))
+        return {
+            word,
+            chars,
+            attempt: 1,
+            guess: '',
+            completed: false
+        }
     }
+
+    return (
+        <div>
+            { 
+                Array.from(props.value).map((c, i) => 
+                <CharacterCard value={c} key={i} activationHandler={activationHandler}/>) 
+            }
+        </div>
+    );
 }
