@@ -24,7 +24,7 @@ function App() {
 
      <WordCard value={word}/>
 
-     {/* <h2 id="inputAnswer"></h2> */}
+     <h2 id="inputAnswer"></h2>
      <h2 id="result"></h2>
      <h2 id="attempt"></h2>
 
