@@ -25,10 +25,10 @@ export default function WordCard(props) {
         setState({...state, guess}) // want all same state but change new guess
         if(guess.length == state.word.length){
             if(guess == state.word){
-                console.log('yeah!')
+                console.log('yeah! you guessed it right.')
                 setState({...state, guess: '', completed: true})
             }else{
-                console.log('reset')
+                console.log('reset, try again.')
                 setState({...state, guess: '', attempt: state.attempt + 1})
             }
         }

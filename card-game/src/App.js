@@ -2,7 +2,9 @@ import React from 'react';
 import './App.css';
 import WordCard from './WordCard';
 
-const word = "Hello";
+var wordBundle = ["hello", "card", "react", "word", "yarn", "nodejs"];
+var word = wordBundle[Math.floor(Math.random() * wordBundle.length)];
+
 function App() {
   return (
    <div className="App">
