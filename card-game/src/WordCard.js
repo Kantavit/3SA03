@@ -37,7 +37,9 @@ export default function WordCard(props) {
             }else{
                 console.log('reset, try again.')
                 setState({...state, guess: '', attempt: state.attempt + 1})
+
                 document.getElementById("result").innerHTML = "Status: You lose, try again";
+                document.getElementById("attempt").innerHTML = `Attempt: ${state.attempt}`;
             }
         }
         //console.log(guess)
