@@ -74,3 +74,18 @@ h2 {
 body {
   background: #49494b;
 }
+
+.button {
+  border: none;
+  color: white;
+  padding: 5px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: rgb(228, 165, 50);
+  font-family: sans-serif;
+  font-weight: bold;
+}
