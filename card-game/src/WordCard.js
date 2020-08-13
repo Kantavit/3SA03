@@ -20,6 +20,11 @@ export default function WordCard(props) {
 
     const activationHandler = (c) => {
         console.log(`${c} has been activated.`)
+        
+        // if(guess.length == 1){
+        //     document.getElementById('inputAnswer').innerHTML = `You just answer: ${c.toUpperCase()}` 
+        // }else
+        //     document.getElementById('inputAnswer').innerHTML += c.toUpperCase();
 
         let guess = state.guess + c
         setState({...state, guess}) // want all same state but change new guess
@@ -27,15 +32,20 @@ export default function WordCard(props) {
             if(guess == state.word){
                 console.log('yeah! you guessed it right.')
                 setState({...state, guess: '', completed: true})
-                document.getElementById("result").innerHTML = "You win!";
+                document.getElementById("result").innerHTML = "Status: You win!";
+
             }else{
                 console.log('reset, try again.')
                 setState({...state, guess: '', attempt: state.attempt + 1})
-                document.getElementById("result").innerHTML = "You lose, try again";
+                document.getElementById("result").innerHTML = "Status: You lose, try again";
             }
         }
         //console.log(guess)
     }
+
+    // if(props.value.isSurrenderConfirm){
+    //     props.value.getAnswer(state.word)
+    // }
 
     return (
         <div>
@@ -46,4 +56,6 @@ export default function WordCard(props) {
             }
         </div>
     );
+
+    
 }

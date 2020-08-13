@@ -86,6 +86,7 @@ body {
   margin: 4px 2px;
   cursor: pointer;
   background-color: rgb(228, 165, 50);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   font-family: sans-serif;
   font-weight: bold;
 }

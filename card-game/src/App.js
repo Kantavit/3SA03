@@ -2,12 +2,16 @@ import React from 'react';
 import './App.css';
 import WordCard from './WordCard';
 
-var wordBundle = ["hello", "card", "react", "word", "yarn", "nodejs"];
+var wordBundle = ["hello", "card", "react", "word", "yarn", "nodejs", "git", "choco", "css", "javaScript", "localhost", "js"];
 var word = wordBundle[Math.floor(Math.random() * wordBundle.length)];
 
 const nextWord = () => {
   window.location.reload(false);
 }
+
+// const getAnswer = (answer) => {
+//   document.getElementById('result').innerHTML = `Answer: ${answer}`;
+// }
 
 function App() {
   return (
@@ -20,9 +24,12 @@ function App() {
 
      <WordCard value={word}/>
 
-     <h2>Status:</h2>
+     {/* <h2 id="inputAnswer"></h2> */}
      <h2 id="result"></h2>
 
+     {/* <h2>
+        <button className="button" onClick={getAnswer}>Show answer</button>
+     </h2> */}
    </div>
   );
  }
